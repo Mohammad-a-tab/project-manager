@@ -1,0 +1,12 @@
+###register request
+POST http://localhost:3300/auth/register
+Content-Type: application/json
+
+{
+    "username" : "mohammad",
+    "email" : "mohammad@gmail.com",
+    "password" : "123456",
+    "mobile" : "09141241747",
+    "confirm_password" : "123456"
+
+}

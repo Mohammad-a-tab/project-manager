@@ -1,11 +1,13 @@
+const { AllRoutes } = require("./router/router");
+
 module.exports = class Application{
     #express =  require("express");
     #app = this.#express();
     constructor(PORT,DB_URL){
         this.configDatabase(DB_URL)
         this.configApplication()
-        this.createServer(PORT)
         this.createRoutes()
+        this.createServer(PORT)
         this.errorHandller()
 
     }
@@ -34,13 +36,13 @@ module.exports = class Application{
 
     }
     errorHandller(){
-        this.#app.use((req,res,next => {
+        this.#app.use((req,res,next) => {
             return res.status(404).json({
                 status : 404,
                 success : false,
-                message : "صفحه یا آدرس مورد نظر یافت نشد"
+                message : "صفحه یا در آدرس مورد نظر یافت نشد"
             })
-        }));
+        });
         this.#app.use((error,req,res,next) => {
             const status = error?.status || 500;
             const message = error?.message || "InternalServerError"
@@ -57,7 +59,17 @@ module.exports = class Application{
             return res.json({
                 message : "This is a New Exoress Application"
             })
-        })
+        });
+        this.#app.use(AllRoutes)
+        // this.#app.use((err,req,res,next) => {
+        //     try {
+                
+               
+
+        //     } catch (error) {
+        //         next(error)
+        //     }
+        // })
 
     }
 }
