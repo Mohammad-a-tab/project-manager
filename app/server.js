@@ -1,5 +1,14 @@
 const { AllRoutes } = require("./router/router");
-
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    autoIndex: false, // Don't build indexes
+    maxPoolSize: 10, // Maintain up to 10 socket connections
+    serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+    socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+    family: 4 // Use IPv4, skip trying IPv6
+}
 module.exports = class Application{
     #express =  require("express");
     #app = this.#express();
@@ -28,9 +37,9 @@ module.exports = class Application{
     }
     configDatabase(DB_URL){
         const mongoose = require("mongoose");
-        mongoose.connect(DB_URL, (error) => {
+        mongoose.connect(DB_URL,options, (error) => {
             if(error) throw error
-            return console.log("Connect to DB successfuly...")
+            return console.log("Connect to DB successfully...")
            
         })
 
@@ -57,7 +66,7 @@ module.exports = class Application{
     createRoutes(){
         this.#app.get("/" , (req,res,next) => {
             return res.json({
-                message : "This is a New Exoress Application"
+                message : "This is a New Express Application"
             })
         });
         this.#app.use(AllRoutes)
