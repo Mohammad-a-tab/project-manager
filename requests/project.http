@@ -9,3 +9,34 @@ Content-Type: application/json
    "text" : "New text for new project is a amazing for programming"
   
 }
+
+
+### get list All Project
+GET http://localhost:3300/project/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### get  Project By id
+GET http://localhost:3300/project/636171382bb3ff1383fc2dec
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+
+### remove Project
+DELETE http://localhost:3300/project/remove/6361672320177eb75cc096a2
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### edit project
+PUT http://localhost:3300/project/edit/636171382bb3ff1383fc2dec
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+   "title" : "mmd is very good boy",
+   "text" : "mmd is very very  boy alah shahed doy",
+   "tags" : ["mmd" , "ali"]
+}
