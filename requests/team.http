@@ -1,0 +1,43 @@
+### create Team
+POST http://localhost:3300/team/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+{
+   "name" : "New title for new project",
+   "descriptaion" : "New text for new project is a amazing for programming",
+   "username" : "mmdisgood"
+  
+}
+
+
+### get list All Team
+GET http://localhost:3300/team/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### get  Team By id
+GET http://localhost:3300/project/636171382bb3ff1383fc2dec
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+
+### remove Team
+DELETE http://localhost:3300/project/remove/6361672320177eb75cc096a2
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### edit Team
+PUT http://localhost:3300/project/edit/636171382bb3ff1383fc2dec
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+   "title" : "mmd is very good boy",
+   "text" : "mmd is very very  boy alah shahed doy",
+   "tags" : ["mmd" , "ali"]
+}

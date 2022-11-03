@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const TeamSchema = new mongoose.Schema({
-    name : {typr : String , required : true},
-    descriptaion : {typr : String},
+    name : {type : String , required : true},
+    descriptaion : {type : String},
+    username : {type : String , required : true , unique : true},
     users : {type : [mongoose.Types.ObjectId] , default : []},
     owner : {type : mongoose.Types.ObjectId , required : true},
 },{
