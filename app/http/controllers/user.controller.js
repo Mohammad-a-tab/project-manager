@@ -15,7 +15,7 @@ class UserController{
             next(error)
          }
     }
- async editProfile(req,res,next){
+    async editProfile(req,res,next){
       try {
         let data = {...req.body};
         const userID = req.user._id; 
@@ -41,7 +41,7 @@ class UserController{
          next(error)
       }
     }
- async uploadProfileImage(req,res,next){
+     async uploadProfileImage(req,res,next){
       try {
           const userID = req.user._id;
           const filePath = req.file.path.substring(7); 
@@ -56,7 +56,39 @@ class UserController{
       } catch (error) {
            next(error)
       }
- }
+     }
+    async getAllRequests(req,res,next){
+        try {
+            const userID = req.user._id;
+            const {inviteRequests} = await UserModel.findOne({_id : userID},{inviteRequests : 1});
+            return res.json({
+                requests : inviteRequests || []
+            })
+        } catch (error) {
+            next(error)
+        }
+    }
+    async getPendingRequests(req,res,next){
+        try {
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+    async getAcceptedRequests(req,res,next){
+        try {
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+    async getrejectedRequests(req,res,next){
+        try {
+            
+        } catch (error) {
+            next(error)
+        }
+    }
     addSkills(){
 
     }
