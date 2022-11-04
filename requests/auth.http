@@ -3,10 +3,10 @@ POST http://localhost:3300/auth/register
 Content-Type: application/json
 
 {
-    "username" : "ali",
-    "email" : "mohammaalid@gmail.com",
+    "username" : "mohsen",
+    "email" : "mohseni@gmail.com",
     "password" : "1234567",
-    "mobile" : "09141241749",
+    "mobile" : "09141241747",
     "confirm_password" : "1234567"
 
 }

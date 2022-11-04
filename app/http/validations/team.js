@@ -1,5 +1,6 @@
-const {body} = require("express-validator")
-const { TeamModel } = require("../../models/team")
+const {body, param} = require("express-validator")
+const { TeamModel } = require("../../models/team");
+const { UserModel } = require("../../models/user");
 function createTeamValidator(){
     return[
         body("name").isLength({min : 5}).withMessage("نام تیم نمیتواند کمتر از 5 نویسه باشد"),
@@ -16,6 +17,8 @@ function createTeamValidator(){
 
     ]
 }
+
+
 
 module.exports = {
     createTeamValidator

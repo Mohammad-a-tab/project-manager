@@ -1,5 +1,5 @@
 ### get User Profile
-http://localhost:3300/user/profile
+GET http://localhost:3300/user/profile
 Authorization: Bearer {{$dotenv token}}
 
 

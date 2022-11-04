@@ -7,7 +7,7 @@ Content-Type: application/json
 {
    "name" : "New title for new project",
    "descriptaion" : "New text for new project is a amazing for programming",
-   "username" : "mmdisgood"
+   "username" : "mmd.90"
   
 }
 
@@ -19,14 +19,21 @@ Content-Type: application/json
 
 
 ### get  Team By id
-GET http://localhost:3300/project/636171382bb3ff1383fc2dec
+GET http://localhost:3300/team/63643718a4bba0038ef35d2c
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### get My Team 
+GET http://localhost:3300/team/me
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 
 
+
 ### remove Team
-DELETE http://localhost:3300/project/remove/6361672320177eb75cc096a2
+DELETE http://localhost:3300/team/remove/63643718a4bba0038ef35d2c
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
@@ -41,3 +48,10 @@ Content-Type: application/json
    "text" : "mmd is very very  boy alah shahed doy",
    "tags" : ["mmd" , "ali"]
 }
+
+
+
+### invite user to team
+GET http://localhost:3300/team/invite/63651b1f6625a74479eff467/mohsen
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
