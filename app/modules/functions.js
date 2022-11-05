@@ -30,7 +30,7 @@ function createUploadPath(){
     return path.join("public" , "Uploads" , Year,Month,Day)
 }
 function createlinkForFiles(fileAddress,req){
-    return req.protocol + "://" + req.get("host") + "/" + (fileAddress.replace(/[\\\\]/gm , "/"))
+    return fileAddress? (req.protocol + "://" + req.get("host") + "/" + (fileAddress.replace(/[\\\\]/gm , "/"))) : []
 }
 module.exports = {
     hashString,

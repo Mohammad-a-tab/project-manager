@@ -5,9 +5,9 @@ Content-Type: application/json
 
 
 {
-   "name" : "New title for new project",
-   "descriptaion" : "New text for new project is a amazing for programming",
-   "username" : "mmd.90"
+   "name" : "mohammad A Team",
+   "descriptaion" : "text for mohammad project is a amazing for programming",
+   "username" : "mohammad_tab"
   
 }
 
@@ -51,6 +51,6 @@ Content-Type: application/json
 
 
 ### invite user to team
-GET http://localhost:3300/team/invite/63651b1f6625a74479eff467/ali
+GET http://localhost:3300/team/invite/63662978036a6b3329874bbc/ali
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json

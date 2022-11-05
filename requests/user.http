@@ -32,7 +32,7 @@ Content-Type: application/json
 
 
 ### Accepted requests
-GET http://localhost:3300/user/change-status-requests/636578082833812ecf4c83af/accepted
+GET http://localhost:3300/user/change-status-requests/63662997036a6b3329874bcd/accepted
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
