@@ -39,14 +39,13 @@ Content-Type: application/json
 
 
 ### edit Team
-PUT http://localhost:3300/project/edit/636171382bb3ff1383fc2dec
+PUT http://localhost:3300/team/update/63651b1f6625a74479eff467
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 {
-   "title" : "mmd is very good boy",
-   "text" : "mmd is very very  boy alah shahed doy",
-   "tags" : ["mmd" , "ali"]
+   "name" : "mmd is very good boy",
+   "descriptaion" : "mmd is very very  boy alah shahed doy"
 }
 
 

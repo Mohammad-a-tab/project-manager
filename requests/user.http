@@ -26,7 +26,13 @@ Content-Type: application/json
 
 
 ### get Accepted user requests
-GET http://localhost:3300/user/requests/pending
+GET http://localhost:3300/user/requests/accepted
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+
+### Accepted requests
+GET http://localhost:3300/user/change-status-requests/636578082833812ecf4c83af/accepted
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
