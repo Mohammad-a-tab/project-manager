@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const ProjectSchema = new mongoose.Schema({
     title : {type : String , required : true},
     text : {type : String},
-    image : {type : String , default : "/public/defaults/default.png" },
+    image : {type : String , default : "/public/defaults/15-compressor.png" },
     owner : {type : mongoose.Types.ObjectId , required : true},
     team : {type : mongoose.Types.ObjectId},
     Private : {type : Boolean , default : true},

@@ -75,7 +75,19 @@ class ProjectController{
     async getAllProject(req,res,next){
         try {
             const owner = req.user._id;
-            const projects = await ProjectModel.find({owner});
+            const projects = await ProjectModel.aggregate([
+                {
+                    $match : {owner}
+                },
+                {
+                    $lookup : {
+                        from : "users",
+                        localField : "owner",
+                        foreignField : "_id",
+                        as : "owner"
+                    }
+                }
+            ]);
             for (const project of projects) {
                 
                 project.image = createlinkForFiles(project.image,req)
